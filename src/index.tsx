@@ -7,7 +7,7 @@ import createBrowserHistory from 'history/createBrowserHistory';
 import './index.css';
 // tslint:enable:no-import-side-effect
 import App from './App';
-import configureStore from './store/configureStore';
+import configureStore from './configureStore';
 import registerServiceWorker from './registerServiceWorker';
 
 const history = createBrowserHistory();
