@@ -5,7 +5,7 @@ import { Provider as RebassProvider } from 'rebass';
 import { createBrowserHistory } from 'history';
 import App from './App';
 
-import configureStore from './store/configureStore';
+import configureStore from './configureStore';
 
 const browserHistory = createBrowserHistory();
 const store = configureStore(browserHistory);
