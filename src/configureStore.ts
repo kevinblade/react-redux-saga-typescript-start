@@ -3,23 +3,26 @@ import { routerMiddleware } from 'react-router-redux';
 import { applyMiddleware, compose, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 
-import rootReducers from './rootReducers';
-import rootSagas from './rootSagas';
+import rootReducer from './rootReducer';
+import rootSaga from './rootSaga';
 
-function configureStore(history: History) {
+declare global {
+  interface Window {
+    devToolsExtension: any;
+  }
+}
+
+export function configureStore(history: History) {
   const sagaMiddleware = createSagaMiddleware();
   const middlewares = [sagaMiddleware, routerMiddleware(history)];
 
-  const store = createStore(
-    rootReducers,
+  const enhancer =
     window.devToolsExtension && process.env.NODE_ENV !== 'production'
       ? compose(applyMiddleware(...middlewares), window.devToolsExtension())
-      : applyMiddleware(...middlewares)
-  );
+      : applyMiddleware(...middlewares);
+  const store = createStore(rootReducer, enhancer);
 
-  sagaMiddleware.run(rootSagas);
+  sagaMiddleware.run(rootSaga);
 
   return store;
 }
-
-export default configureStore;

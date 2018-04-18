@@ -6,12 +6,18 @@ import createBrowserHistory from 'history/createBrowserHistory';
 // tslint:disable:no-import-side-effect
 import './index.css';
 // tslint:enable:no-import-side-effect
-import App from './App';
-import configureStore from './configureStore';
+import { configureStore } from './configureStore';
 import registerServiceWorker from './registerServiceWorker';
+import App from './app/App';
 
 const history = createBrowserHistory();
 const store = configureStore(history);
+
+declare global {
+  interface Window {
+    devToolsExtension: any;
+  }
+}
 
 ReactDOM.render(
   <Provider store={store}>

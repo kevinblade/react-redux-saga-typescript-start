@@ -5,16 +5,10 @@ import { Provider as RebassProvider } from 'rebass';
 import { createBrowserHistory } from 'history';
 import App from './App';
 
-import configureStore from './configureStore';
+import { configureStore } from '../configureStore';
 
 const browserHistory = createBrowserHistory();
 const store = configureStore(browserHistory);
-
-declare global {
-  interface Window {
-    devToolsExtension: any;
-  }
-}
 
 it('renders without crashing', () => {
   const div = document.createElement('div');

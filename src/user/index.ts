@@ -1,15 +1,15 @@
 import * as _Actions from './actions';
 import * as _Consts from './consts';
-import * as _Reducers from './reducers';
+import * as _Reducer from './reducer';
 import * as _Sagas from './sagas';
-import * as _Types from './types';
+import * as _States from './states';
 
 namespace User {
   export import Actions = _Actions;
   export import Consts = _Consts;
-  export import Reducers = _Reducers;
+  export import Reducer = _Reducer;
   export import Sagas = _Sagas;
-  export import Types = _Types;
+  export import States = _States;
 }
 
 export default User;

@@ -2,6 +2,6 @@ import { RouterState } from 'react-router-redux';
 import User from './user';
 
 export interface GlobalState {
-  user: User.Types.UserState;
+  user: User.States.UserState;
   router: RouterState;
 }
