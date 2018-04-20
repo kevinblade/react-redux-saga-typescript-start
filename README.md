@@ -1,4 +1,4 @@
-# This starter kit is inspired from [TypeScript React Starter](https://github.com/Microsoft/TypeScript-React-Starter) and [Starter Pack](https://github.com/jch254/starter-pack). Appreciate their efforts.
+# This starter kit is inspired from [TypeScript React Starter](https://github.com/Microsoft/TypeScript-React-Starter), [Material-UI example with TypeScript](https://github.com/mui-org/material-ui/tree/v1-beta/examples/create-react-app-with-typescript) and [Starter Pack](https://github.com/jch254/starter-pack). Appreciate their efforts.
 
 This quick start guide will teach you how to wire up TypeScript with [React](http://facebook.github.io/react/).
 By the end, you'll have

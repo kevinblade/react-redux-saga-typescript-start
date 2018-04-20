@@ -1,18 +1,20 @@
-import User from './';
+import * as Actions from './actions';
+import * as Consts from './consts';
+import * as States from './states';
 
 export default function reducer(
-  state: User.States.UserState = User.States.initialUserState,
-  action: User.Actions.UserAction
-): User.States.UserState {
+  state: States.UserState = States.initialUserState,
+  action: Actions.UserAction
+): States.UserState {
   switch (action.type) {
-    case User.Consts.LOGIN_REQUEST:
+    case Consts.LOGIN_REQUEST:
       return { ...state, id: action.id, password: action.password };
-    case User.Consts.LOGIN_SUCCESS:
+    case Consts.LOGIN_SUCCESS:
       return { ...state, isLoggedIn: true };
-    case User.Consts.LOGIN_FAILURE:
+    case Consts.LOGIN_FAILURE:
       return { ...state, error: action.error };
-    case User.Consts.LOGOUT_REQUEST:
-      return User.States.initialUserState;
+    case Consts.LOGOUT_REQUEST:
+      return States.initialUserState;
     default:
       return state;
   }

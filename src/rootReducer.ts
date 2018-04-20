@@ -1,6 +1,11 @@
 import { routerReducer } from 'react-router-redux';
 import { combineReducers } from 'redux';
+import App from './app';
 import { GlobalState } from './globalState';
-import userReducer from './user/reducer';
+import User from './user';
 
-export default combineReducers<GlobalState>({ user: userReducer, router: routerReducer });
+export default combineReducers<GlobalState>({
+  app: App.Reducer.default,
+  router: routerReducer,
+  user: User.Reducer.default
+});

@@ -1,8 +1,6 @@
-export interface AppState {}
+import * as States from './states';
 
-export const initialAppState: AppState = {};
-
-export default function reducer(state: AppState = initialAppState, action: any): AppState {
+export default function reducer(state: States.AppState = States.initialAppState, action: any): States.AppState {
   switch (action.type) {
     default:
       return state;

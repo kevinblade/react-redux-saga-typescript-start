@@ -1,4 +1,5 @@
-import User from './';
+import * as Consts from './consts';
+import { ResponseError } from '../api/services';
 
 export interface LoginRequest {
   type: 'LOGIN_REQUEST';
@@ -12,7 +13,7 @@ export interface LoginSuccess {
 
 export interface LoginFailure {
   type: 'LOGIN_FAILURE';
-  error: string;
+  error: ResponseError;
 }
 
 export interface LogoutRequest {
@@ -22,20 +23,20 @@ export interface LogoutRequest {
 export type UserAction = LoginRequest | LoginSuccess | LoginFailure | LogoutRequest;
 
 export const loginRequest = (id: string, password: string): LoginRequest => ({
-  type: User.Consts.LOGIN_REQUEST,
+  type: Consts.LOGIN_REQUEST,
   id,
   password
 });
 
 export const loginSuccess = (): LoginSuccess => ({
-  type: User.Consts.LOGIN_SUCCESS
+  type: Consts.LOGIN_SUCCESS
 });
 
-export const loginFailure = (error: string): LoginFailure => ({
-  type: User.Consts.LOGIN_FAILURE,
+export const loginFailure = (error: ResponseError): LoginFailure => ({
+  type: Consts.LOGIN_FAILURE,
   error
 });
 
 export const logoutRequest = (): LogoutRequest => ({
-  type: User.Consts.LOGOUT_REQUEST
+  type: Consts.LOGOUT_REQUEST
 });
